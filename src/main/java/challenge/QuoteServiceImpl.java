@@ -13,16 +13,16 @@ public class QuoteServiceImpl implements QuoteService {
 
 	@Override
 	public Quote getQuote() {
-		return quoteRepository.findQuoteById(randomQuote());
+		return quoteRepository.findQuoteById(retornaRandom());
 	}
-
+	
 	@Override
 	public Quote getQuoteByActor(String actor) {
 		return quoteRepository.findQuoteByActorContains(actor).stream().findAny().get();
 	}
 	
-	private Integer randomQuote() {
-	    return new Random().nextInt(1000);
-    }
-
+	private Integer retornaRandom() {
+		Random random = new Random();
+		return random.nextInt(10000);
+	}
 }

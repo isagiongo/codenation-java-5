@@ -30,9 +30,9 @@ public class QuoteControllerTest {
 		quote.setId(2);
 		quote.setActor("ACTOR_TEST");
 		quote.setQuote("QUOTE_TEST");
-		
+			
 		given(service.getQuote()).willReturn(quote);
-		
+
 		mvc.perform(get("/v1/quote")
 	               .accept(MediaType.APPLICATION_JSON))
 	               .andExpect(status().isOk())

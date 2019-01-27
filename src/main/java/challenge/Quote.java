@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity

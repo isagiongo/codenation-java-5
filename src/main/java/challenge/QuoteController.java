@@ -17,7 +17,7 @@ public class QuoteController {
 	public Quote findQuote() {
 		return quoteService.getQuote();
 	}
-
+	
 	@RequestMapping(value = "/quote/{actor}", method = RequestMethod.GET)
 	public Quote findQuoteByActor(@PathVariable String actor) {
 		return quoteService.getQuoteByActor(actor);
