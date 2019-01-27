@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Quote {
 	
 	@Id
-    @JsonIgnore
+    //@JsonIgnore
 	private Integer id;
 	
 	private String actor;
