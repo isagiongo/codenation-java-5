@@ -1,5 +1,7 @@
 package challenge;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,16 +9,20 @@ import org.springframework.stereotype.Service;
 public class QuoteServiceImpl implements QuoteService {
 
 	@Autowired
-	private QuoteRepository repository;
+	private QuoteRepository quoteRepository;
 
 	@Override
 	public Quote getQuote() {
-		return null;
+		return quoteRepository.findQuoteById(randomQuote());
 	}
 
 	@Override
 	public Quote getQuoteByActor(String actor) {
-		return null;
+		return quoteRepository.findQuoteByActorContains(actor).stream().findAny().get();
 	}
+	
+	private Integer randomQuote() {
+	    return new Random().nextInt(1000);
+    }
 
 }
